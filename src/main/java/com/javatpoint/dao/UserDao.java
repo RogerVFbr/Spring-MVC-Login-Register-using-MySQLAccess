@@ -1,38 +1,27 @@
 package com.javatpoint.dao;
 
-import com.javatpoint.beans.User;
+import com.javatpoint.models.User;
 import com.javatpoint.config.DBConfig;
 import com.mysqlaccess.MySQLAccess;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
 public class UserDao {
 
-    JdbcTemplate template;
-    MySQLAccess table = new MySQLAccess(DBConfig.LOCAL, "users");
+    MySQLAccess table = new MySQLAccess(DBConfig.getConfig(), "users");;
 
-    public void setTemplate(JdbcTemplate template) {
-        this.template = template;
+    static {
+        MySQLAccess.logDetails();
+        MySQLAccess.logInfo();
     }
 
-    public Object save(User p) {
+    public Object add(User p) {
         return table.add(p);
     }
 
-    public int update(User p) {
-        return table.update(p);
-    }
-
-    public int delete(int id) {
-        return table.delete("id=" + id);
-    }
-
-    public User getUserById(int id) {
-        return table.get(User.class, "id=" + id).get(0);
-    }
-
-    public List<User> getUsers() {
-        return table.get(User.class);
+    public User getUserByEmail(String email) {
+        List<User> user = table.get(User.class, "email='" + email + "'");
+        if (user.size()>0) return user.get(0);
+        return null;
     }
 }

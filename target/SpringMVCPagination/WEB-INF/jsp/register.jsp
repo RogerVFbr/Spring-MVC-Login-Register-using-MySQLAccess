@@ -3,28 +3,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Login page</title>
+    <title>Register page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="container" style="width: 40%; margin: 40px auto auto auto">
-    <h2 style="margin-bottom: 20px">Login page</h2>
-    <form:form method="post" action="login">
+    <h2 style="margin-bottom: 20px">Register page</h2>
+    <form:form method="post" action="register">
         <div class="form-group">
-            <label for="email">Email address:</label>
+            <label for="name">Name:</label>
+            <form:input path="name" type="text" class="form-control" id="name" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
             <form:input path="email" type="email" class="form-control" id="email" required="required"/>
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
             <form:input path="password" type="password" class="form-control" id="pwd" required="required"/>
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" style="float: left">Login</button>
-            <a href="${pageContext.request.contextPath}/register" class="btn btn-success" style="float: right">Register</a>
-        </div>
-        <div style="clear: both"></div  >
-
+        <button type="submit" class="btn btn-primary">Register</button>
     </form:form>
     <c:if test="${not empty error}">
         <div class="alert alert-danger" role="alert">${error}</div>
