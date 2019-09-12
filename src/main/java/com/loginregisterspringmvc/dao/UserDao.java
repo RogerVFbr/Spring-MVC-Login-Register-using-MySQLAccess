@@ -1,7 +1,7 @@
-package com.javatpoint.dao;
+package com.loginregisterspringmvc.dao;
 
-import com.javatpoint.models.User;
-import com.javatpoint.config.DBConfig;
+import com.loginregisterspringmvc.models.User;
+import com.loginregisterspringmvc.config.DBConfig;
 import com.mysqlaccess.MySQLAccess;
 
 import java.util.List;

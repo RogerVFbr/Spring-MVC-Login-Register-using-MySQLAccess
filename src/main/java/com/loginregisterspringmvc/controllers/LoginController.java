@@ -1,7 +1,7 @@
-package com.javatpoint.controllers;
+package com.loginregisterspringmvc.controllers;
 
-import com.javatpoint.models.User;
-import com.javatpoint.dao.UserDao;
+import com.loginregisterspringmvc.models.User;
+import com.loginregisterspringmvc.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.javatpoint.config;
+package com.loginregisterspringmvc.config;
 
 
 import com.mysqlaccess.models.MySQLAConfig;

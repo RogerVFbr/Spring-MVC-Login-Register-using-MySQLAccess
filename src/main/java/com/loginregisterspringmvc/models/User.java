@@ -1,6 +1,4 @@
-package com.javatpoint.models;
-
-import java.util.Objects;
+package com.loginregisterspringmvc.models;
 
 public class User {
     private int userId;
